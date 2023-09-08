@@ -17,7 +17,7 @@ export default function Navbar(props: Props) {
             <a className="h-full" href="/">
                 <img
                     className="h-full"
-                    src="logo-colored.svg"
+                    src="../logo-colored.svg"
                     alt="X5 Logo"
                 />
             </a>

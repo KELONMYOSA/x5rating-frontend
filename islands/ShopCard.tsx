@@ -1,12 +1,25 @@
-import { IShop } from '../utils/models.tsx'
-import { useState } from 'preact/hooks'
+import {IAspect, IShop} from '../utils/models.tsx'
+import {useState} from 'preact/hooks'
 import ratingColor from "../utils/ratingColor.ts";
+import AspectCard from "../components/AspectCard.tsx";
+import {Fragment} from "preact";
 
 interface ShopCardProps {
     item: IShop
 }
 
-export default function ShopCard({ item }: ShopCardProps) {
+function aspectCards(aspects: IAspect[]) {
+    if (aspects.length == 0) return null
+    return (
+        <Fragment>
+            {aspects.map((aspect, index) => (
+                <AspectCard aspect={aspect} key={index}/>
+            ))}
+        </Fragment>
+    )
+}
+
+export default function ShopCard({item}: ShopCardProps) {
     const [details, setDetails] = useState(false)
 
     const toggle = () => setDetails((prev) => !prev)
@@ -25,8 +38,8 @@ export default function ShopCard({ item }: ShopCardProps) {
                 </div>
             </div>
             {details &&
-                <div>
-                    <p>Плюсы и минусы</p>
+                <div className="w-full flex flex-wrap gap-4 pt-4">
+                    {aspectCards(item.aspects)}
                 </div>
             }
         </button>
