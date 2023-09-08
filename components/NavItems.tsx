@@ -13,7 +13,7 @@ export type NavItem = {
 export const NavItemsData: NavItem[] = [
     {
         label: "Рейтинг",
-        href: "/",
+        href: "/rating",
         icon: <RectangleStackOutline className="w-6 h-6"/>,
     },
     {
