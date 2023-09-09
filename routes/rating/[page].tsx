@@ -22,7 +22,7 @@ export default function Rating({data}: PageProps<[IShop[], number] | null>) {
         <div className="flex justify-center items-start mt-[50px]">
             <div className="grid grow w-4/5">
                 {shops.map((shop, index) => (
-                    <ShopCard item={shop} key={index}/>
+                    <ShopCard item={shop} key={index} page={pageNum}/>
                 ))}
                 <PageNavigation page={pageNum}/>
             </div>

@@ -1,6 +1,5 @@
 import {
     RectangleStackOutline,
-    MapOutline,
     ChartBarOutline,
 } from "https://esm.sh/preact-heroicons";
 import classNames from "https://esm.sh/classnames";
@@ -16,11 +15,6 @@ export const NavItemsData: NavItem[] = [
         label: "Рейтинг",
         href: "/rating/1",
         icon: <RectangleStackOutline className="w-6 h-6"/>,
-    },
-    {
-        label: "Карта",
-        href: "/map",
-        icon: <MapOutline className="w-6 h-6"/>,
     },
     {
         label: "Статистика",

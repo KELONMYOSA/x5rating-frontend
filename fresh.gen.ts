@@ -4,8 +4,8 @@
 
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/index.tsx";
-import * as $3 from "./routes/map.tsx";
+import * as $2 from "./routes/aspects_chart/[shop_id].tsx";
+import * as $3 from "./routes/index.tsx";
 import * as $4 from "./routes/rating/[page].tsx";
 import * as $5 from "./routes/statistics.tsx";
 import * as $$0 from "./islands/Layout.tsx";
@@ -16,8 +16,8 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $0,
     "./routes/_app.tsx": $1,
-    "./routes/index.tsx": $2,
-    "./routes/map.tsx": $3,
+    "./routes/aspects_chart/[shop_id].tsx": $2,
+    "./routes/index.tsx": $3,
     "./routes/rating/[page].tsx": $4,
     "./routes/statistics.tsx": $5,
   },

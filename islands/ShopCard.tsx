@@ -5,11 +5,12 @@ import AspectCard from "../components/AspectCard.tsx";
 import {Fragment} from "preact";
 
 interface ShopCardProps {
-    item: IShop
+    item: IShop,
+    page: number
 }
 
 function aspectCards(aspects: IAspect[]) {
-    if (aspects.length == 0) return null
+    if (aspects.length == 0) return "Недостаточно данных"
     return (
         <Fragment>
             {aspects.map((aspect, index) => (
@@ -19,7 +20,7 @@ function aspectCards(aspects: IAspect[]) {
     )
 }
 
-export default function ShopCard({item}: ShopCardProps) {
+export default function ShopCard({item, page}: ShopCardProps) {
     const [details, setDetails] = useState(false)
 
     const toggle = () => setDetails((prev) => !prev)
@@ -38,9 +39,17 @@ export default function ShopCard({item}: ShopCardProps) {
                 </div>
             </div>
             {details &&
-                <div className="w-full flex flex-wrap gap-4 pt-4">
-                    {aspectCards(item.aspects)}
-                </div>
+                <Fragment>
+                    <div className="w-full flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                        {aspectCards(item.aspects)}
+                    </div>
+                    <div>
+                        <img
+                            src={`/aspects_chart/${item.id}_${page}`}
+                            className="mx-auto my-4"
+                        />
+                    </div>
+                </Fragment>
             }
         </button>
     )
